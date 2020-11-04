@@ -4,7 +4,7 @@ Servo myservo;
 #define echopin 2 // echo pin
 #define trigpin 3 // Trigger pin
 
-int set_cm = 30;
+int set_cm = 50;
 
 long ultra_time;
 long dis_cm;
@@ -30,6 +30,16 @@ ultra_read();
 Serial.print("Dis :");Serial.println(dis_cm); 
 
 if(dis_cm<set_cm){
+myservo.write(20);
+delay(50);
+myservo.write(30);
+delay(50);
+myservo.write(40);
+delay(50);
+myservo.write(50);
+delay(50);
+myservo.write(80);
+delay(50);  
 myservo.write(110);
 delay(3000); 
 }
